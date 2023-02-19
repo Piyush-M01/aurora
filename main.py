@@ -39,7 +39,7 @@ class selfie:
 
             else:
                 gray_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-                haar_cascade = cv2.CascadeClassifier('/home/piyush/aurora_ws/haarcascades_cuda/haarcascade_frontalface_alt.xml')
+                haar_cascade = cv2.CascadeClassifier('/haarcascades/haarcascade_frontalface_alt.xml')
                 faces_rect = haar_cascade.detectMultiScale(gray_img, scaleFactor=1.05,minNeighbors=9, minSize=(30, 30),flags=cv2.CASCADE_SCALE_IMAGE)
                 for (x, y, w, h) in faces_rect:
                     cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), thickness=2)
